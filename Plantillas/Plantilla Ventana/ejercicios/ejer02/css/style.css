@@ -1,0 +1,64 @@
+body {
+    background: white repeat;
+    text-align: justify;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+}
+
+
+#content {
+    padding: 20px;
+    text-align: center;
+}
+
+.grid-item {
+    margin-bottom: 20px;
+}
+
+.grid-item p {
+    font-size: 16px;
+}
+
+.grid-item strong {
+    color: blueviolet;
+}
+
+#boton {
+    padding: 10px 20px;
+    background-color: rgba(210, 105, 30, 0.5);
+    color: rgba(255, 250, 250, 0.9);
+    border: none;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
+}
+
+#boton:hover {
+    background-color: rgba(128, 128, 128, 0.25);
+    color: rgba(255, 215, 0, 0.75);
+}
+
+#resultado {
+    color: blueviolet;
+    font-weight: bold;
+}
+
+a {
+    color: rgba(0, 0, 255, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgba(255, 215, 0, 0.75);
+}
+
+#footer {
+    background-color: rgba(44, 190, 44, 0.25);
+    text-align: center;
+    padding: 20px;
+    color: rgba(0, 0, 0, 0.9);
+    text-shadow: 2px 2px 4px rgba(86, 86, 86, 0.75);
+    margin-top: 20px;
+    font-size: 12px;
+    border-top: 1px solid #d3d3d3;
+}

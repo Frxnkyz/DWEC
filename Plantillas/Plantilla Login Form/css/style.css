@@ -1,98 +1,128 @@
 body {
-    background: white repeat;
+    background: #1e1e1e; /* Fondo negro */
+    color: #f0db4f; /* Color de texto JS */
     text-align: justify;
     font-family: Tahoma, Geneva, sans-serif;
     font-size: 14px;
-    
-    }
-    
-    .header {
-    background: blueviolet repeat;
-    opacity: 0.75;
-    text-align: center;
-    padding: 5px;
-    color: rgb(255,250,250,0.90);
-    text-shadow: 2px 2px 4px rgb(0,0,0,0.75);
-    }
-    
-    .topnav {
+}
+
+.header {
+    background-color: #323330; /* Fondo oscuro */
+    opacity: 0.9;
+    display: flex;
+    justify-content: space-between; /* Distribuir los elementos en los extremos */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 20px;
+    color: #f0db4f; /* Color del texto JS */
+}
+
+.header img {
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    margin-left: 20px; /* Espacio a la izquierda de la imagen */
+}
+
+.topnav {
     overflow: hidden;
-    background-color: rgb(210,105,30,0.5);
-    
-    
-    }
-    
-    .topnav a {
+    background-color: #323330; /* Fondo oscuro JS */
+}
+
+.topnav a {
     float: left;
     display: block;
-    color: rgb(255,250,250,0.90);
-    text-shadow: 2px 2px 4px rgb(0,0,0,0.75);
+    color: #f0db4f; /* Color de texto JS */
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    }
-    
-    .topnav a:hover {
-    background-color: rgb(128,128,128,0.25);
-    color: rgb(255,215,0,0.75);
-    }
-    
-    .container {
+}
+
+.topnav a:hover {
+    background-color: #6d6d6d;
+    color: #323330;
+}
+
+/* Otros estilos no modificados */
+
+/* Contenedor de tarjetas */
+.container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 16px;
-    }
-    
-    .card {
+}
+
+.card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: auto;
-    border: 1px solid rgb(211,211,211,0.5);
-    box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+    border: 1px solid #f7df1e; /* Borde amarillo */
+    box-shadow: 2px 2px 8px 4px rgba(247, 223, 30, 0.25); /* Sombra amarilla */
     border-radius: 15px;
-    font-family: sans-serif;
-    }
-    .cardTitle {
-        font-size: 24px;
-        padding: 10px 10px 0 10px;
-        }
-        
-        .cardBody {
-        padding: 10px;
-        flex: 1 1 100%;
-        }
-        
-        .cardFooter {
-        background: rgba(44, 190, 44, 0.25);
-        border-radius: 0 0 15px 15px;
-        padding: 10px;
-        text-align: center;
-        }
-        
-        .cardFooter a {
-        text-decoration: none;
-        color: rgba(0, 0, 255, 0.8);
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-        }
-        #contenido {
-            display: none;
-        }
-        
-        @media screen and (max-width: 600px) {
-        .container {
+    background-color: #333333; /* Fondo gris oscuro */
+    color: #f7df1e; /* Texto amarillo */
+}
+
+.cardTitle {
+    font-size: 24px;
+    padding: 10px;
+}
+
+.cardBody {
+    padding: 10px;
+    flex: 1 1 100%;
+}
+
+.cardFooter {
+    background-color: rgba(44, 190, 44, 0.25); /* Fondo verde claro */
+    border-radius: 0 0 15px 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+.cardFooter a {
+    text-decoration: none;
+    color: #f7df1e; /* Enlace amarillo */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); /* Sombra del texto */
+}
+
+#contenido {
+    display: none;
+}
+
+/* Estilos para encabezados */
+h3, h4, h5 {
+    display: block; /* Asegura que ocupen toda la línea */
+    text-align: center; /* Centra el texto */
+    margin: 10px 0; /* Espaciado entre encabezados */
+}
+
+/* Responsivo */
+@media screen and (max-width: 600px) {
+    .container {
         width: 100%;
-        }
-        }
-        
-        .footer {
-        background: url(../img/bgblue2.png) repeat;
-        text-align: center;
-        padding: 20px;
-        color: rgba(0, 0, 0, 0.9);
-        text-shadow: 2px 2px 4px rgba(86, 86, 86, 0.75);
-        }
+    }
+
+    .header {
+        flex-direction: column; /* Cambia a columna para pantallas pequeñas */
+        align-items: center; /* Centra todos los elementos en el eje horizontal */
+        text-align: center; /* Centra el texto */
+    }
+
+    .header img {
+        margin: 10px 0; /* Reajusta márgenes en pantallas pequeñas */
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: #333333; /* Fondo gris oscuro */
+    color: #f7df1e; /* Texto amarillo */
+    padding: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75); /* Sombra del texto */
+}
+
 /**************LOGIN******************************/
 .login-container {
     display: flex;
@@ -102,17 +132,17 @@ body {
 }
 
 .login-form {
-    background-color: rgba(210, 105, 30, 0.5);
+    background-color: #333333; /* Fondo gris oscuro */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+    box-shadow: 2px 2px 8px 4px rgba(247, 223, 30, 0.25); /* Sombra amarilla */
     width: 300px;
 }
 
 .login-form h2 {
     text-align: center;
-    color: rgba(255, 250, 250, 0.90);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
+    color: #f7df1e; /* Texto amarillo */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75); /* Sombra del texto */
 }
 
 .login-form input[type="text"], .login-form input[type="password"] {
@@ -125,9 +155,8 @@ body {
 
 .login-form input[type="submit"] {
     width: 100%;
-    background-color: blueviolet;
-    color: rgba(255, 250, 250, 0.90);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
+    background-color: #f7df1e; /* Botón amarillo */
+    color: #000000; /* Texto negro */
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -135,7 +164,22 @@ body {
 }
 
 .login-form input[type="submit"]:hover {
-    background-color: rgba(128, 128, 128, 0.25);
-    color: rgba(255, 215, 0, 0.75);
+    background-color: #555555; /* Fondo gris al pasar el ratón */
+    color: #ffffff; /* Texto blanco al pasar el ratón */
 }
 
+/******************BOTÓN CERRAR SESIÓN**************************/
+.logout-button {
+    width: 100%;
+    background-color: #f7df1e; /* Fondo amarillo */
+    color: #000000; /* Texto negro */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #555555; /* Fondo gris al pasar el ratón */
+    color: #ffffff; /* Texto blanco al pasar el ratón */
+}
