@@ -17,7 +17,7 @@ Este sistema de login permite a los usuarios iniciar sesión con un nombre de us
 La calculadora es una herramienta que ofrece tanto una calculadora básica como una científica, además de permitir el cambio entre diferentes bases numéricas (decimal, binario, hexadecimal y octal).
 
 ## Estructura del proyecto 
-
+```
 │   index.html
 │   README.md
 │
@@ -48,3 +48,4 @@ La calculadora es una herramienta que ofrece tanto una calculadora básica como 
         funcion.js
         login.js
         script.js
+```
