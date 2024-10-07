@@ -1,0 +1,185 @@
+body {
+    background: #1e1e1e; /* Fondo negro */
+    color: #f0db4f; /* Color de texto JS */
+    text-align: justify;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+}
+
+.header {
+    background-color: #323330; /* Fondo oscuro */
+    opacity: 0.9;
+    display: flex;
+    justify-content: space-between; /* Distribuir los elementos en los extremos */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 20px;
+    color: #f0db4f; /* Color del texto JS */
+}
+
+.header img {
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    margin-left: 20px; /* Espacio a la izquierda de la imagen */
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #323330; /* Fondo oscuro JS */
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f0db4f; /* Color de texto JS */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+    background-color: #6d6d6d;
+    color: #323330;
+}
+
+/* Otros estilos no modificados */
+
+/* Contenedor de tarjetas */
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: auto;
+    border: 1px solid #f7df1e; /* Borde amarillo */
+    box-shadow: 2px 2px 8px 4px rgba(247, 223, 30, 0.25); /* Sombra amarilla */
+    border-radius: 15px;
+    background-color: #333333; /* Fondo gris oscuro */
+    color: #f7df1e; /* Texto amarillo */
+}
+
+.cardTitle {
+    font-size: 24px;
+    padding: 10px;
+}
+
+.cardBody {
+    padding: 10px;
+    flex: 1 1 100%;
+}
+
+.cardFooter {
+    background-color: rgba(44, 190, 44, 0.25); /* Fondo verde claro */
+    border-radius: 0 0 15px 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+.cardFooter a {
+    text-decoration: none;
+    color: #f7df1e; /* Enlace amarillo */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); /* Sombra del texto */
+}
+
+#contenido {
+    display: none;
+}
+
+/* Estilos para encabezados */
+h3, h4, h5 {
+    display: block; /* Asegura que ocupen toda la línea */
+    text-align: center; /* Centra el texto */
+    margin: 10px 0; /* Espaciado entre encabezados */
+}
+
+/* Responsivo */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+
+    .header {
+        flex-direction: column; /* Cambia a columna para pantallas pequeñas */
+        align-items: center; /* Centra todos los elementos en el eje horizontal */
+        text-align: center; /* Centra el texto */
+    }
+
+    .header img {
+        margin: 10px 0; /* Reajusta márgenes en pantallas pequeñas */
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: #333333; /* Fondo gris oscuro */
+    color: #f7df1e; /* Texto amarillo */
+    padding: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75); /* Sombra del texto */
+}
+
+/**************LOGIN******************************/
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.login-form {
+    background-color: #333333; /* Fondo gris oscuro */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px 4px rgba(247, 223, 30, 0.25); /* Sombra amarilla */
+    width: 300px;
+}
+
+.login-form h2 {
+    text-align: center;
+    color: #f7df1e; /* Texto amarillo */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75); /* Sombra del texto */
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+    width: 93%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgba(211, 211, 211, 0.5);
+    border-radius: 5px;
+}
+
+.login-form input[type="submit"] {
+    width: 100%;
+    background-color: #f7df1e; /* Botón amarillo */
+    color: #000000; /* Texto negro */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #555555; /* Fondo gris al pasar el ratón */
+    color: #ffffff; /* Texto blanco al pasar el ratón */
+}
+
+/******************BOTÓN CERRAR SESIÓN**************************/
+.logout-button {
+    width: 100%;
+    background-color: #f7df1e; /* Fondo amarillo */
+    color: #000000; /* Texto negro */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #555555; /* Fondo gris al pasar el ratón */
+    color: #ffffff; /* Texto blanco al pasar el ratón */
+}
