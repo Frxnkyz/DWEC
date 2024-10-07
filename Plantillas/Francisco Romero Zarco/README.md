@@ -25,3 +25,10 @@ DWEC se refiere a la creación y gestión de la parte visible de un sitio web o 
 
 ## Estructura del Proyecto
 
+Francisco Romero Zarco          # Carpeta raíz del proyecto
+├── index.html                  # Archivo HTML principal
+├── css/
+│   └── style.css               # Archivo de estilos CSS
+├── js/
+│   └── calculadora.js          # Archivo JavaScript para la lógica de la calculadora
+└── README.md                   # Documentación del proyecto
