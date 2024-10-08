@@ -1,34 +1,50 @@
-# Desarrollo Web en entornos de cliente - Calculadora Web
+# Desarrollo Web en entornos de cliente 
 
 ## Introducción
-
-Este es el repositorio para el curso de Desarrollo Web en entornos de cliente (DWEC), donde se encuentran los proyectos y ejercicios que se deben subir sobre esta asignatura. En este proyecto, hemos desarrollado una calculadora web que permite realizar diversas operaciones matemáticas.
+Este será el repositorio para DWEC donde encontraremos los proyectos/ejercicios que se tengan que subir sobre esta asignatura. 
 
 ## Estructura
-
 ### Lenguajes utilizados
-
-- **HTML**: Para la estructura de la página.
-- **CSS**: Para el diseño y estilo (en menor medida).
-- **JavaScript**: Principalmente para la lógica y funcionalidad de la calculadora.
+Utilizaremos HTML, CSS (bastante menos) y JS (principalmente).
 
 ### ¿En qué consiste DWEC?
+Se refiere a la creación y gestión de la parte visible de un sitio web o aplicación web, es decir, todo aquello con lo que los usuarios interactúan directamente en su navegador. Esta área del desarrollo web se centra en la presentación y experiencia de usuario.
 
-DWEC se refiere a la creación y gestión de la parte visible de un sitio web o aplicación web, es decir, todo aquello con lo que los usuarios interactúan directamente en su navegador. Esta área del desarrollo web se centra en la presentación y la experiencia del usuario.
+---
 
-## Características de la Calculadora
+## Descripción
+Este sistema de login permite a los usuarios iniciar sesión con un nombre de usuario y una contraseña. Una vez autenticado, se muestra contenido adicional que incluye una calculadora.
+La calculadora es una herramienta que ofrece tanto una calculadora básica como una científica, además de permitir el cambio entre diferentes bases numéricas (decimal, binario, hexadecimal y octal).
 
-- **Calculadora Básica**: Realiza operaciones matemáticas simples como suma, resta, multiplicación y división.
-- **Calculadora Científica**: Incluye funciones matemáticas avanzadas como seno, coseno, tangente, raíz cuadrada, potencia y logaritmo.
-- **Cambio de Base**: Permite la conversión entre diferentes bases numéricas (decimal, binario, hexadecimal y octal).
-- **Interfaz Responsiva**: Diseñada para funcionar en dispositivos de diferentes tamaños, incluyendo móviles y tablets.
+## Estructura del proyecto 
 
-## Estructura del Proyecto
-
-Francisco Romero Zarco          # Carpeta raíz del proyecto
-├── index.html                  # Archivo HTML principal
-├── css/
-│   └── style.css               # Archivo de estilos CSS
-├── js/
-│   └── calculadora.js          # Archivo JavaScript para la lógica de la calculadora
-└── README.md                   # Documentación del proyecto
+│   index.html
+│   README.md
+│
+├───css
+│       style.css
+│
+├───ejercicios
+│   ├───ejer01
+│   │   │   index.html
+│   │   │
+│   │   ├───css
+│   │   │       style.css
+│   │   │
+│   │   └───js
+│   │           calculadora.js
+│   │
+│   └───ejer02
+│       │   index.html
+│       │
+│       ├───css
+│       │       style.css
+│       │
+│       └───js
+├───image
+│       foto.jpg
+│
+└───js
+        funcion.js
+        login.js
+        script.js
