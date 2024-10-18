@@ -3,8 +3,21 @@
 document.addEventListener('DOMContentLoaded', () => {
     const boton = document.getElementById('boton');
     const resultado = document.getElementById('resultado');
+    const imagenPersonaje = document.getElementById('imagen-personaje');
 
-    // Evento click para obtener una quote
+    
+    const imagenesPersonajes = {
+        yoda: './img/yoda.png',
+        darthvader: './img/darthvader.png',
+        obiwan: './img/obiwan.png',
+        leia: './img/leia.png',
+        lukeskywalker: './img/lukeskywalker.png',
+        hansolo: './img/hansolo.png',
+        emperor: './img/emperor.png',
+        c3po: './img/c3po.png'
+    };
+
+    
     boton.addEventListener('click', async () => {
         const personajeSeleccionado = document.getElementById('personaje').value;
         const url = `https://star-wars-quotes-api-character-collection.p.rapidapi.com/quote?character=${personajeSeleccionado}`;
@@ -19,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch(url, options);
             const result = await response.json();
-            console.log(result); // Verifica la estructura del objeto
 
             // Manejo del error si el personaje no se encuentra
             if (result.error) {
@@ -27,8 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Mostrar el resultado en el elemento correspondiente
+            // Mostrar la quote y el personaje
             resultado.textContent = `"${result.quote}" - ${result.character}`;
+
+            // Mostrar la imagen del personaje
+            const imagenSrc = imagenesPersonajes[personajeSeleccionado];
+            if (imagenSrc) {
+                imagenPersonaje.innerHTML = `<img src="${imagenSrc}" alt="${result.character}" class="imagen-personaje-borde">`;
+            } else {
+                imagenPersonaje.innerHTML = '';
+            }
         } catch (error) {
             console.error(error);
             resultado.textContent = 'Ocurrió un error al obtener la quote.';

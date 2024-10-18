@@ -13,12 +13,12 @@ Se refiere a la creación y gestión de la parte visible de un sitio web o aplic
 ---
 
 ## Descripción
-Este sistema de login permite a los usuarios iniciar sesión con un nombre de usuario y una contraseña. Una vez autenticado, se muestra contenido adicional que incluye una calculadora. La calculadora es una herramienta que ofrece tanto una calculadora básica como una científica, además de permitir el cambio entre diferentes bases numéricas (decimal, binario, hexadecimal y octal).
+Este sistema de **login** permite a los usuarios iniciar sesión con un nombre de usuario y una contraseña. Una vez autenticado, se muestra contenido adicional que incluye una calculadora. La calculadora es una herramienta que ofrece tanto una calculadora básica como una científica, además de permitir el cambio entre diferentes bases numéricas (decimal, binario, hexadecimal y octal).
 
 Además, se incluye un **conversor de texto** como ejercicio 2 que permite aplicar diversas transformaciones al texto ingresado, como convertir a mayúsculas, minúsculas, capitalizar la primera o última letra, y más.
 
 ### API de Star Wars
-Se ha implementado una API para obtener citas de personajes icónicos de Star Wars. Los usuarios pueden seleccionar un personaje del menú desplegable y hacer clic en un botón para obtener una cita aleatoria. Los personajes disponibles son:
+Se ha implementado una **API** para obtener citas de personajes icónicos de Star Wars. Los usuarios pueden seleccionar un personaje del menú desplegable y hacer clic en un botón para obtener una cita aleatoria. Los personajes disponibles son:
 - Yoda
 - Darth Vader
 - Obi-Wan Kenobi
