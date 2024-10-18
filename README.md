@@ -13,6 +13,7 @@ Se refiere a la creación y gestión de la parte visible de un sitio web o aplic
 ---
 
 ## Descripción
+<<<<<<< HEAD
 Este sistema de login permite a los usuarios iniciar sesión con un nombre de usuario y una contraseña. Una vez autenticado, se muestra contenido adicional que incluye una calculadora. La calculadora es una herramienta que ofrece tanto una calculadora básica como una científica, además de permitir el cambio entre diferentes bases numéricas (decimal, binario, hexadecimal y octal).
 
 Además, se incluye un **conversor de texto** como ejercicio 2 que permite aplicar diversas transformaciones al texto ingresado, como convertir a mayúsculas, minúsculas, capitalizar la primera o última letra, y más.
@@ -27,7 +28,29 @@ Se ha implementado una API para obtener citas de personajes icónicos de Star Wa
 - Han Solo
 - Emperador
 - C-3PO
+=======
+>>>>>>> c44646dd3f0dd863e7e06061d740efa31c7cc060
 
+### Login form
+Este sistema de **login** permite a los usuarios iniciar sesión con un nombre de usuario y una contraseña. 
+
+### Calculadora
+La **calculadora** es una herramienta que ofrece tanto una calculadora básica como una científica, además de permitir el cambio entre diferentes bases numéricas (decimal, binario, hexadecimal y octal).
+
+### Conversor de texto
+Se incluye un **conversor de texto** te permite aplicar diversas transformaciones al texto ingresado, como convertir a mayúsculas, minúsculas, capitalizar la primera o última letra, y más.
+
+### API de Star Wars
+Se ha implementado una **API** para obtener citas de personajes icónicos de Star Wars. Los usuarios pueden seleccionar un personaje del menú desplegable y hacer clic en un botón para obtener una cita aleatoria. Los personajes disponibles son:
+- Yoda
+- Darth Vader
+- Obi-Wan Kenobi
+- Leia Organa
+- Luke Skywalker
+- Han Solo
+- Emperador
+- C-3PO
+---
 ## Estructura del proyecto 
 
 │   index.html
