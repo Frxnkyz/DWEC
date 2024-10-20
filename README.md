@@ -51,7 +51,7 @@ Se ha implementado una **API** para obtener citas de personajes icónicos de Sta
 - C-3PO
 ---
 ## Estructura del proyecto 
-
+```
 │   index.html
 │   README.md
 │
@@ -93,3 +93,4 @@ Se ha implementado una **API** para obtener citas de personajes icónicos de Sta
         funcion.js
         login.js
         script.js
+```
