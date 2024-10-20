@@ -1,11 +1,10 @@
-"use strict"
+"use strict";
 
 document.addEventListener('DOMContentLoaded', () => {
     const boton = document.getElementById('boton');
     const resultado = document.getElementById('resultado');
     const imagenPersonaje = document.getElementById('imagen-personaje');
 
-    
     const imagenesPersonajes = {
         yoda: './img/yoda.png',
         darthvader: './img/darthvader.png',
@@ -17,35 +16,59 @@ document.addEventListener('DOMContentLoaded', () => {
         c3po: './img/c3po.png'
     };
 
-    
+    // Variables para controlar las solicitudes
+    let requestCount = 0;
+    const requestLimit = 5; // Límite de peticiones antes de bloquear
+    const blockTime = 60000; // Tiempo de bloqueo en milisegundos (1 minuto)
+    let blocked = false;
+
+    // Función para verificar si se ha alcanzado el límite
+    const checkRequestLimit = () => {
+        if (requestCount >= requestLimit) {
+            blocked = true;
+            resultado.textContent = 'Has alcanzado el límite de solicitudes. Espera un minuto para intentar de nuevo.';
+            setTimeout(() => {
+                requestCount = 0; // Reinicia el contador después del tiempo de bloqueo
+                blocked = false;
+                resultado.textContent = ''; // Limpia el mensaje después del bloqueo
+            }, blockTime);
+            return false;
+        }
+        return true;
+    };
+
     boton.addEventListener('click', async () => {
+        if (blocked) {
+            resultado.textContent = 'Espera un momento antes de hacer otra solicitud.';
+            return;
+        }
+
+        if (!checkRequestLimit()) {
+            return; // Bloquea la solicitud si se alcanzó el límite
+        }
+
         const personajeSeleccionado = document.getElementById('personaje').value;
         const url = `https://star-wars-quotes-api-character-collection.p.rapidapi.com/quote?character=${personajeSeleccionado}`;
         const options = {
             method: 'GET',
             headers: {
-                'x-rapidapi-key': 'e4e9ad3badmsh2a13355db09dec4p17a8c1jsn1f0533d14d68',
+                'x-rapidapi-key': '7be93deea5msh413f0c4245ad8bdp104169jsnbaea2ed7cf36', // Nuevo API Key
                 'x-rapidapi-host': 'star-wars-quotes-api-character-collection.p.rapidapi.com'
             }
         };
 
         try {
             const response = await fetch(url, options);
-            const result = await response.json();
+            requestCount++; // Incrementa el contador de solicitudes
+            const result = await response.json(); // Cambiado a .json() para manejar JSON
 
-            // Manejo del error si el personaje no se encuentra
-            if (result.error) {
-                resultado.textContent = `Error: ${result.error}. Los personajes disponibles son: ${result.availableCharacters.join(', ')}`;
-                return;
-            }
-
-            // Mostrar la quote y el personaje
+            // Formato requerido: "la quota" -El nombre del personaje
             resultado.textContent = `"${result.quote}" - ${result.character}`;
 
             // Mostrar la imagen del personaje
             const imagenSrc = imagenesPersonajes[personajeSeleccionado];
             if (imagenSrc) {
-                imagenPersonaje.innerHTML = `<img src="${imagenSrc}" alt="${result.character}" class="imagen-personaje-borde">`;
+                imagenPersonaje.innerHTML = `<img src="${imagenSrc}" alt="${personajeSeleccionado}" class="imagen-personaje-borde">`;
             } else {
                 imagenPersonaje.innerHTML = '';
             }
