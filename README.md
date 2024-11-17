@@ -29,7 +29,6 @@ Se ha implementado una API para obtener citas de personajes icónicos de Star Wa
 - Emperador
 - C-3PO
 =======
->>>>>>> c44646dd3f0dd863e7e06061d740efa31c7cc060
 
 ### Login form
 Este sistema de **login** permite a los usuarios iniciar sesión con un nombre de usuario y una contraseña. 
@@ -52,7 +51,7 @@ Se ha implementado una **API** para obtener citas de personajes icónicos de Sta
 - C-3PO
 ---
 ## Estructura del proyecto 
-
+```
 │   index.html
 │   README.md
 │
@@ -94,3 +93,4 @@ Se ha implementado una **API** para obtener citas de personajes icónicos de Sta
         funcion.js
         login.js
         script.js
+```
