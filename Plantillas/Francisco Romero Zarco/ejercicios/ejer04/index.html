@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD con Persistencia</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./js/main.js" type="text/javascript"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>CRUD con Persistencia en Cookie, Storage e IndexedDB</h1>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <div class="cardTitle">
+                <h3>Formulario de Entrada para Cookies</h3>
+            </div>
+            <div class="cardBody">
+                <form id="data-form">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" required>
+                    <label for="value">Valor:</label>
+                    <input type="text" id="value" required>
+                    <button type="submit" id="save-cookie">Guardar en Cookies</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cardTitle">
+                <h3>Formulario de Entrada para Local Storage</h3>
+            </div>
+            <div class="cardBody">
+                <form id="storage-form">
+                    <label for="storage-name">Nombre (Storage):</label>
+                    <input type="text" id="storage-name" required>
+                    <label for="storage-value">Valor (Storage):</label>
+                    <input type="text" id="storage-value" required>
+                    <button type="submit" id="save-storage">Guardar en Storage</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="cardTitle">
+                <h3>Formulario de Entrada para IndexedDB</h3>
+            </div>
+            <div class="cardBody">
+                <form id="indexeddb-form">
+                    <label for="indexeddb-name">Nombre (IndexedDB):</label>
+                    <input type="text" id="indexeddb-name" required>
+                    <label for="indexeddb-value">Valor (IndexedDB):</label>
+                    <input type="text" id="indexeddb-value" required>
+                    <button type="submit" id="save-indexeddb">Guardar en IndexedDB</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="cardFooter">
+            <button id="load-api">Cargar Datos desde API</button>
+            <button id="load-1">+1</button>
+            <button id="load-5">+5</button>
+        </div>
+
+        <div class="card">
+            <div class="cardTitle">
+                <h3>Datos almacenados</h3>
+            </div>
+            <div class="cardBody">
+                <table id="data-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Valor</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; Francisco Romero Zarco &copy; 2024</p>
+    </footer>
+</body>
+</html>

@@ -1,73 +1,88 @@
-"use strict";
-window.onload = function() {
-    const form = document.getElementById('loginForm');
-    const divlog = document.getElementById('login');
-    const contenidoSecreto = document.getElementById('contenido'); // Div que se oculta
+'use strict';
 
-    // Función para establecer datos en localStorage
-    function setLocalStorage(key, value) {
-        localStorage.setItem(key, value);
-    }
+let db;
 
-    // Función para obtener datos de localStorage
-    function getLocalStorage(key) {
-        return localStorage.getItem(key);
-    }
+async function openDatabase() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open('LoginDB', 1);
 
-    // Función para eliminar datos de localStorage
-    function removeLocalStorage(key) {
-        localStorage.removeItem(key);
-    }
+    request.onerror = (event) => reject(event);
+    request.onsuccess = (event) => {
+      db = event.target.result;
+      resolve(db);
+    };
 
-    // Comprobar si el usuario ya ha iniciado sesión
-    const loggedInUser = getLocalStorage('username');
-    if (loggedInUser) {
-        alert(`Bienvenido de nuevo, ${loggedInUser}!`);
-        divlog.style.display = 'none';
-        contenidoSecreto.style.display = 'block';
-    }
+    request.onupgradeneeded = (event) => {
+      db = event.target.result;
+      if (!db.objectStoreNames.contains('LoginStore')) {
+        db.createObjectStore('LoginStore', { keyPath: 'name' });
+      }
+    };
+  });
+}
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Evitar que el formulario se envíe y la página se recargue
+// Guardar estado de login en IndexedDB
+async function setLoginStatus(name, isLoggedIn) {
+  await openDatabase();
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction(['LoginStore'], 'readwrite');
+    const store = transaction.objectStore('LoginStore');
+    const request = store.put({ name, value: isLoggedIn });
 
-        const user = document.getElementById('username').value;
-        const pass = document.getElementById('password').value;
+    request.onsuccess = () => resolve();
+    request.onerror = (event) => reject(event);
+  });
+}
 
-        // Comprobación de las credenciales
-        if (user === "zarco" && pass === "12345") {
-            alert("Acceso concedido. ¡Bienvenido!");
-            setLocalStorage('username', user); // Guarda el nombre de usuario en localStorage
+// Obtener estado de login de IndexedDB
+async function getLoginStatus(name) {
+  await openDatabase();
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction(['LoginStore'], 'readonly');
+    const store = transaction.objectStore('LoginStore');
+    const request = store.get(name);
 
-            // Ocultar el formulario de login
-            divlog.style.display = 'none';
+    request.onsuccess = (event) => {
+      resolve(event.target.result ? event.target.result.value : null);
+    };
+    request.onerror = (event) => reject(event);
+  });
+}
 
-            // Mostrar el contenido oculto
-            contenidoSecreto.style.display = 'block';
-        } else {
-            let intento = confirm("Usuario o contraseña incorrectos. ¿Quieres intentarlo de nuevo?");
-            if (intento) {
-                form.reset(); // Reinicia el formulario para volver a intentarlo
-            } else {
-                alert("Acceso denegado.");
-            }
-        }
-    });
+// Función de login
+async function login(event) {
+  event.preventDefault();
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
 
-    // Función para cerrar sesión
-    function cerrarSesion() {
-        // Eliminar los datos del usuario en localStorage
-        removeLocalStorage('username');
+  if (username === 'zarco' && password === '12345') {
+    await setLoginStatus('loggedIn', true);
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('contenido').style.display = 'block';
+  } else {
+    alert('Credenciales incorrectas');
+  }
+}
 
-        // Mostrar de nuevo el formulario de inicio de sesión
-        divlog.style.display = 'flex'; // Asegúrate de que sea 'flex' para mantener el centrado
+// Comprobar estado de login al cargar la página
+async function checkLoginStatus() {
+  const isLoggedIn = await getLoginStatus('loggedIn');
+  if (isLoggedIn) {
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('contenido').style.display = 'block';
+  }
+}
 
-        // Ocultar el contenido secreto
-        contenidoSecreto.style.display = 'none';
-    }
+// Función de logout
+async function logout() {
+  await setLoginStatus('loggedIn', false);
+  document.getElementById('login').style.display = 'block';
+  document.getElementById('contenido').style.display = 'none';
+}
 
-    // Asociar el evento del botón de cerrar sesión
-    const logoutButton = document.getElementById('logoutButton');
-    if (logoutButton) {
-        logoutButton.addEventListener('click', cerrarSesion);
-    }
-};
+// Event listeners
+document.getElementById('loginForm').addEventListener('submit', login);
+document.getElementById('logoutButton').addEventListener('click', logout);
+
+// Inicializar al cargar
+checkLoginStatus();

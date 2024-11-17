@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
             blocked = true;
             resultado.textContent = 'Has alcanzado el límite de solicitudes. Espera un minuto para intentar de nuevo.';
             setTimeout(() => {
-                requestCount = 0; // Reinicia el contador después del tiempo de bloqueo
+                requestCount = 0; 
                 blocked = false;
-                resultado.textContent = ''; // Limpia el mensaje después del bloqueo
+                resultado.textContent = ''; 
             }, blockTime);
             return false;
         }
